@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import { MovieContext } from "../MovieContext";
 
-function MovieLists() {
+const MovieLists = () => {
+  const [movies, setMovies] = useContext(MovieContext);
+
   useEffect(() => {
     fetchMovies();
   }, []);
-
-  const [movies, setMovies] = useState([]);
 
   const fetchMovies = async () => {
     const data = await fetch("https://yts.lt/api/v2/list_movies.json");
@@ -58,6 +59,6 @@ function MovieLists() {
       {renderMovies()}
     </>
   );
-}
+};
 
 export default MovieLists;

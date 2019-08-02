@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Link, Switch } from "react-router-dom";
+import { MovieContext } from "../MovieContext";
 
-function Navbar() {
+const Navbar = () => {
+  const [movies, setMovies] = useContext(MovieContext);
+
   return (
     <React.Fragment>
+      {console.log(movies)}
       <ul className="nav">
-        {/* <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </li> */}
         <li className="nav-item">
-          <Link to="/movies" className="nav-link">
+          <Link to="/" className="nav-link">
             Movies
           </Link>
         </li>
@@ -22,13 +21,16 @@ function Navbar() {
         </li>
         <li>
           <Link to="#" className="nav-link">
-            Cart&nbsp;<span className="badge badge-pill badge-light">0</span>
+            Cart&nbsp;
+            <span className="badge badge-pill badge-light">
+              {movies.length}
+            </span>
           </Link>
         </li>
       </ul>
       <hr />
     </React.Fragment>
   );
-}
+};
 
 export default Navbar;
