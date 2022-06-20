@@ -4,24 +4,25 @@ class Upcoming extends Component {
   state = {
     isLoaded: false,
     movies: [],
-    error: null
+    error: null,
   };
 
   componentDidMount() {
     const movies = [...this.state.movies];
+
     fetch("https://yts.mx/api/v2/list_upcoming.json")
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
-        result => {
+        (result) => {
           this.setState({
             isLoaded: true,
-            movies: result.data
+            movies: result.data,
           });
         },
-        error => {
+        (error) => {
           this.setState({
             isLoaded: false,
-            error
+            error,
           });
           console.log(error);
         }

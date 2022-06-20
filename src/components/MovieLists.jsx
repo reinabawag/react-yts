@@ -29,16 +29,15 @@ const MovieLists = () => {
       );
     } else {
       return (
-        <>
-          {movies.map(movie => (
-            <figure key={movie.id} className="figure m-3">
+        <div>
+          {movies.map((movie) => (
+            <figure key={movie.id} className="figure align-self-center">
               <Link to={"/movie/" + movie.id}>
                 <img
                   src={movie.medium_cover_image}
                   onError={addDefaultSrc}
                   className="figure-img img-fluid rounded"
                   alt={movie.title}
-                  height="315"
                 />
 
                 <figcaption className="figure-caption">
@@ -47,7 +46,7 @@ const MovieLists = () => {
               </Link>
             </figure>
           ))}
-        </>
+        </div>
       );
     }
   }
