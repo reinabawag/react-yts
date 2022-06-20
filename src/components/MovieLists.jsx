@@ -11,7 +11,7 @@ const MovieLists = () => {
   }, []);
 
   const fetchMovies = async () => {
-    const data = await fetch("https://yts.lt/api/v2/list_movies.json");
+    const data = await fetch("https://yts.mx/api/v2/list_movies.json");
     const movies = await data.json();
     setMovies(movies.data.movies);
   };

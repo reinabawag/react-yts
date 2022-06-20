@@ -21,7 +21,7 @@ class Movie extends Component {
 
   fetchMovieById() {
     const url =
-      "https://yts.lt/api/v2/movie_details.json?movie_id=" +
+      "https://yts.mx/api/v2/movie_details.json?movie_id=" +
       this.props.match.params.id +
       "&with_images=true&with_cast=true";
 

@@ -9,7 +9,7 @@ class Upcoming extends Component {
 
   componentDidMount() {
     const movies = [...this.state.movies];
-    fetch("https://yts.lt/api/v2/list_upcoming.json")
+    fetch("https://yts.mx/api/v2/list_upcoming.json")
       .then(res => res.json())
       .then(
         result => {
